@@ -1,38 +1,26 @@
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  cursor: none; /* Hide the default cursor on desktop */
+  touch-action: none; /* Prevent default touch actions on mobile */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.box {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%); /* Center the box on the cursor/touch point */
+  pointer-events: none; /* Ensure the box doesn't interfere with mouse/touch events */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow for better visibility */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .box {
+    width: 60px; /* Larger touch target for mobile */
+    height: 60px;
   }
 }
